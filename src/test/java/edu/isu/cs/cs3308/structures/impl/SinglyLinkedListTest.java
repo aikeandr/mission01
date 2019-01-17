@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package edu.isu.cs.cs3308.structures.impl;
 
 import edu.isu.cs.cs3308.structures.List;
@@ -33,7 +38,7 @@ public class SinglyLinkedListTest {
 
     @Before
     public void setUp() {
-        fixture = new SinglyLinkedList<>();
+        fixture = new SinglyLinkedListTest<>();
     }
 
     @After
@@ -327,6 +332,7 @@ public class SinglyLinkedListTest {
         assertEquals("Incorrectly added value to list", new Integer(1), fixture.first());
     }
 
+    @Test
     public void testAddFirst_3() {
         ArrayList<Integer> otherList = new ArrayList<>();
 
@@ -387,6 +393,7 @@ public class SinglyLinkedListTest {
         assertEquals(element, fixture.last());
     }
 
+    @Test
     public void testAddLast_4() {
         ArrayList<Integer> otherList = new ArrayList<>();
 
