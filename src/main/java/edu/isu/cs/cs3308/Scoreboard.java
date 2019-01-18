@@ -1,6 +1,7 @@
 package edu.isu.cs.cs3308;
 
 import edu.isu.cs.cs3308.structures.List;
+import edu.isu.cs.cs3308.structures.SinglyLinkedList;
 
 /**
  * A class used to represent a scoreboard for a game which is constrained to
@@ -12,6 +13,7 @@ public class Scoreboard {
 
     private int capacity; // maximum capacity constraint
     private List<GameEntry> board; // Underlying list data structure
+    private int size = 0;
 
     /**
      * Constructs a new scoreboard with the provided maximum capacity.
@@ -30,7 +32,13 @@ public class Scoreboard {
      * @param entry Entry to be added.
      */
     public void add(GameEntry entry) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if(entry == null)
+            return;
+        if(size == capacity)
+            this.board.removeLast();
+        this.board.addFirst(entry);
+        size++;
+
     }
 
     /**
@@ -42,7 +50,8 @@ public class Scoreboard {
      * to the list size or less than zero.
      */
     public GameEntry remove(int i) throws IndexOutOfBoundsException {
-        throw new UnsupportedOperationException("Not supported yet.");
+            if(i < 0 || i >= capacity) throw new IndexOutOfBoundsException();
+            return board.remove(i);
     }
 
     /**

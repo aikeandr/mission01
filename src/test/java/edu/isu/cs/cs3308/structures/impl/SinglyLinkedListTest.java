@@ -6,6 +6,7 @@
 package edu.isu.cs.cs3308.structures.impl;
 
 import edu.isu.cs.cs3308.structures.List;
+import edu.isu.cs.cs3308.structures.SinglyLinkedList;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class SinglyLinkedListTest {
 
     @Before
     public void setUp() {
-        fixture = new SinglyLinkedListTest<>();
+        fixture = new SinglyLinkedList();
     }
 
     @After
