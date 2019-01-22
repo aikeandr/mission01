@@ -6,11 +6,13 @@
 package edu.isu.cs.cs3308.structures.impl;
 
 import edu.isu.cs.cs3308.structures.List;
-import edu.isu.cs.cs3308.structures.SinglyLinkedList;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Random;
+
+import edu.isu.cs.cs3308.structures.SinglyLinkedList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

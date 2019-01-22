@@ -1,13 +1,22 @@
 package edu.isu.cs.cs3308.structures;
 
-import java.io.PrintStream;
-
+/**
+ * An implementation of a list, which uses a node to point to the next
+ * node in a uni-directional path while keeping track of the first and last
+ * element of the list.
+ *
+ * @author Andrew Aikens
+ * @param <E> Element Type
+ */
 public class SinglyLinkedList<E> implements List<E> {
 
     protected Node<E> head;
     protected Node<E> tail;
     protected int size = 0;
 
+    /**
+     * @return first element in the list or null if empty
+     */
     @Override
     public E first() {
         if(isEmpty())
@@ -15,6 +24,10 @@ public class SinglyLinkedList<E> implements List<E> {
         return head.getData();
     }
 
+    /**
+     *
+     * @return last element in the list or null if empty
+     */
     @Override
     public E last() {
         if(isEmpty())
@@ -22,6 +35,12 @@ public class SinglyLinkedList<E> implements List<E> {
         return tail.getData();
     }
 
+    /**
+     * Adds the element to the tail of the list. If the list is empty,
+     * the element becomes both the head and tail.
+     *
+     * @param element Element to be added to the end of the list.
+     */
     @Override
     public void addLast(E element) {
         if(element == null)
@@ -44,6 +63,8 @@ public class SinglyLinkedList<E> implements List<E> {
     }
 
     /**
+     * Adds the element to the head of the list. If the list is empty,
+     * the element becomes both the head and tail.
      *
      * @param element Element to be added to the front of the list.
      */
@@ -60,6 +81,11 @@ public class SinglyLinkedList<E> implements List<E> {
         size++;
     }
 
+    /**
+     * Removes the first element of the list
+     *
+     * @return the first element of the list or null if empty
+     */
     @Override
     public E removeFirst() {
         if(this.isEmpty())
@@ -71,6 +97,11 @@ public class SinglyLinkedList<E> implements List<E> {
         return tempNode.getData();
     }
 
+    /**
+     * Removes the last element of the list
+     *
+     * @return the last element of the list or null if empty
+     */
     @Override
     public E removeLast() {
         if(this.isEmpty())
@@ -87,6 +118,13 @@ public class SinglyLinkedList<E> implements List<E> {
         return toRemove.getData();
     }
 
+    /**
+     * Inserts the element into a specified index or at the tail of the list
+     * if the index is greater than the original size of the list.
+     *
+     * @param element Element to be added (as long as it is not null).
+     * @param index Index in the list where the element is to be inserted.
+     */
     @Override
     public void insert(E element, int index) {
         if(index < 0 || element == null)
@@ -107,6 +145,12 @@ public class SinglyLinkedList<E> implements List<E> {
         size++;
     }
 
+    /**
+     * Removes an element at a given valid index.
+     *
+     * @param index Index of the element to remove
+     * @return the element at the given index
+     */
     @Override
     public E remove(int index) {
         if(index < 0 || index >= size)
@@ -122,6 +166,12 @@ public class SinglyLinkedList<E> implements List<E> {
         return toRemove.getData();
     }
 
+    /**
+     * Returns the element of a given index without affecting the list.
+     *
+     * @param index Index of the value to be retrieved.
+     * @return the element at a given index
+     */
     @Override
     public E get(int index) {
         if(index < 0 || index >= size)
@@ -133,16 +183,27 @@ public class SinglyLinkedList<E> implements List<E> {
         return tempNode.getData();
     }
 
+    /**
+     *
+     * @return size of the list. 0 is considered empty
+     */
     @Override
     public int size() {
         return size;
     }
 
+    /**
+     *
+     * @return true if any elements are in the list. false otherwise.
+     */
     @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
+    /**
+     * Prints the list.
+     */
     @Override
     public void printList() {
         if(isEmpty())
